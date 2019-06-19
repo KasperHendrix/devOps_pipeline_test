@@ -6,7 +6,7 @@ package devOps.devOps;
  */
 public class App {
 	public static void main(String[] args) {
-		String hw = "Pas";
+		String hw = "Pasq";
 		getMessage(hw);
 	}
 
