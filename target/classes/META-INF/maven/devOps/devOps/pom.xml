@@ -24,7 +24,7 @@
 		</dependency>
 	</dependencies>
 
-	<plugin>
+	<!-- <plugin>
 		<groupId>org.jacoco</groupId>
 		<artifactId>jacoco-maven-plugin</artifactId>
 		<version>${jacoco.version}</version>
@@ -41,7 +41,6 @@
 					<goal>report</goal>
 				</goals>
 			</execution>
-			<!-- Add this checking -->
 			<execution>
 				<id>jacoco-check</id>
 				<goals>
@@ -63,7 +62,7 @@
 				</configuration>
 			</execution>
 		</executions>
-	</plugin>
+	</plugin> -->
 
 
 </project>
