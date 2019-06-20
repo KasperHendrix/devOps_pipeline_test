@@ -8,8 +8,21 @@ public class TestMessageBuilder {
 
 	@Test
     public void testName() {
-		App gm = new App(); 
-		assertEquals("Hello Pasq",  gm.getMessage("pas"));
+		App app = new App(); 
+		assertEquals("Hello Pasq",  app.getMessage("pasq"));
 	}
+	
+	@Test
+	public void testNameEmpty() {
+		App app1 = new App();
+		assertEquals("Please provide a name!", app1.getMessage(" "));
+	}
+	
+	@Test
+	public void testNameNull() {
+		App app2 = new App();
+		assertEquals("Please provide a name!", app2.getMessage(null));
+	}
+	
 	
 }
