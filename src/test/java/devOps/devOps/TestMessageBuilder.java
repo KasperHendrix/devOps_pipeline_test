@@ -9,7 +9,7 @@ public class TestMessageBuilder {
 	@Test
     public void testName() {
 		App app = new App(); 
-		assertEquals("Hello Pasq",  app.getMessage("pasq"));
+		assertEquals("Hello Pasq",  app.getMessage("Pasq"));
 	}
 	
 	@Test
