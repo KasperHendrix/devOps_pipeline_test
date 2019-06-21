@@ -6,21 +6,20 @@ package devOps.devOps;
  */
 public class App {
 	public static void main(String[] args) {
-		String hw = "Pasq";
-		getMessage(hw);
+		String msg = "Pasq";
+		getMessage(msg);
 	}
 
-	public static String getMessage(String hw) {
+	public static String getMessage(String msg) {
 		StringBuilder result = new StringBuilder();
 
-		if (hw == null || hw.trim().length() == 0) {
+		if (msg == null || msg.trim().length() == 0) {
 
 			result.append("Please provide a name!");
 
 		} else {
 
-			result.append("Hello " + hw);
-
+			result.append("Hello " + msg);
 		}
 		return result.toString();
 	}
