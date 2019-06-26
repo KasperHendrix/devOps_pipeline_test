@@ -18,13 +18,10 @@
 		<java.version>1.8</java.version>
 
 		<!-- SONARQUBE SECTION -->
-		<!--  <sonar.login>pasquale.labate</sonar.login>
-		<sonar.password>Chiave2019!3</sonar.password> -->
 		<sonar.login>58a193c08d6ee582ab6d8f3ef5cad7f6695fe9da</sonar.login>
 		<sonar.password></sonar.password> 
 		<sonar.projectKey>devOps_pipeline_test</sonar.projectKey>
 		<sonar.host.url>http://sonar02:9990</sonar.host.url>
-		<sonar.java.binaries>bin</sonar.java.binaries>
 		
 		<!-- JACOCO/SONAR SECTION -->
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
