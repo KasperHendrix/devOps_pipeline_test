@@ -1,6 +1,0 @@
-projectKey=devOps_pipeline_test
-serverUrl=http://sonar02:9990
-serverVersion=7.7.0.23042
-dashboardUrl=http://sonar02:9990/dashboard?id=devOps_pipeline_test
-ceTaskId=AWuS-JyeuG7_l6IFyxjs
-ceTaskUrl=http://sonar02:9990/api/ce/task?id=AWuS-JyeuG7_l6IFyxjs
