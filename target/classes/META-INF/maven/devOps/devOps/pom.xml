@@ -28,8 +28,6 @@
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
 		<sonar.jacoco.reportPaths>${project.build.directory}/jacoco.exec</sonar.jacoco.reportPaths>
 		<sonar.language>java</sonar.language>
-
-		<!-- TODO DA CONTROLLARE <sonar.junit.reportsPath>${project.build.directory}/jacoco.exec</sonar.junit.reportsPath> -->
 		<sonar.junit.reportPaths>${project.build.directory}/jacoco.exec</sonar.junit.reportPaths>
 	</properties>
 	
