@@ -22,6 +22,15 @@
 		<sonar.password></sonar.password>
 		<sonar.projectKey>devOps_pipeline_test</sonar.projectKey>
 		<sonar.host.url>http://sonar02:9990</sonar.host.url>
+		
+		<!-- JACOCO/SONAR SECTION -->
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		<sonar.jacoco.reportPaths>${project.build.directory}/jacoco.exec</sonar.jacoco.reportPaths>
+		<sonar.language>java</sonar.language>
+
+		<!-- TODO DA CONTROLLARE <sonar.junit.reportsPath>${project.build.directory}/jacoco.exec</sonar.junit.reportsPath> -->
+		<sonar.junit.reportPaths>${project.build.directory}/jacoco.exec</sonar.junit.reportPaths>
 	</properties>
 	
 	<profiles>
@@ -49,6 +58,33 @@
 					<artifactId>sonar-maven-plugin</artifactId>
 					<version>3.3.0.1492</version>
 				</plugin>
+				
+				<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+
+						<configuration>
+							<!-- Sets the output directory for the code coverage report. -->
+							<outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
+						</configuration>
+
+					</execution>
+				</executions>
+			</plugin>
+				
 			</plugins>
 		</pluginManagement>
 	</build>
