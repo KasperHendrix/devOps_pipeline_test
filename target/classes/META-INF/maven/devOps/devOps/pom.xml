@@ -18,8 +18,10 @@
 		<java.version>1.8</java.version>
 
 		<!-- SONARQUBE SECTION -->
-		<sonar.login>fbdb2f5dde226f8b4a474f2e88d4f4ccea02af61</sonar.login>
-		<sonar.password></sonar.password>
+		<sonar.login>pasquale.labate</sonar.login>
+		<sonar.password>Chiave2019!3</sonar.password>
+		<!--  <sonar.login>fbdb2f5dde226f8b4a474f2e88d4f4ccea02af61</sonar.login>
+		<sonar.password></sonar.password> -->
 		<sonar.projectKey>devOps_pipeline_test</sonar.projectKey>
 		<sonar.host.url>http://sonar02:9990</sonar.host.url>
 		
@@ -56,7 +58,7 @@
 				<plugin>
 					<groupId>org.sonarsource.scanner.maven</groupId>
 					<artifactId>sonar-maven-plugin</artifactId>
-					<version>3.3.0.1492</version>
+					<version>3.6.0.1398</version>
 				</plugin>
 				
 				<plugin>
