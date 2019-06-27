@@ -26,9 +26,9 @@
 		<!-- JACOCO/SONAR SECTION -->
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-		<sonar.jacoco.reportPaths>/var/lib/jenkins/workspace/devOps_pipeline/target/surefire-reports/jacoco.exec</sonar.jacoco.reportPaths>
+		<sonar.jacoco.reportPaths>${project.build.directory}/surfire-reports/jacoco.exec</sonar.jacoco.reportPaths>
 		<sonar.language>java</sonar.language>
-		<sonar.junit.reportPaths>/var/lib/jenkins/workspace/devOps_pipeline/target/surefire-reports/jacoco.exec</sonar.junit.reportPaths>
+		<sonar.junit.reportPaths>${project.build.directory}/surfire-reports/jacoco.exec</sonar.junit.reportPaths>
 	</properties>
 	
 	<profiles>
