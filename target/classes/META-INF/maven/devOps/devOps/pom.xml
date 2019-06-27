@@ -26,9 +26,9 @@
 		<!-- JACOCO/SONAR SECTION -->
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-		<sonar.jacoco.reportPaths>${project.build.directory}/jacoco.exec</sonar.jacoco.reportPaths>
+		<sonar.jacoco.reportPaths>/var/lib/jenkins/workspace/devOps_pipeline/target/surefire-reports/jacoco.exec</sonar.jacoco.reportPaths>
 		<sonar.language>java</sonar.language>
-		<sonar.junit.reportPaths>${project.build.directory}/jacoco.exec</sonar.junit.reportPaths>
+		<sonar.junit.reportPaths>/var/lib/jenkins/workspace/devOps_pipeline/target/surefire-reports/jacoco.exec</sonar.junit.reportPaths>
 	</properties>
 	
 	<profiles>
@@ -41,7 +41,7 @@
 				<env>test</env>
 				<sonar.host.url>http://sonar02:9990</sonar.host.url>
 				<!-- USATI PER LA FASE DI DEPLOY SU APPLICATION SERVER -->
-				<appsrv.username>plabate</appsrv.username>
+				<appsrv.username>pasquale.labate</appsrv.username>
 				<appsrv.psw>Chiave2019!3!</appsrv.psw>
 				<appsrv.host>http://cisrv02:8080</appsrv.host>
 			</properties>
