@@ -20,7 +20,7 @@
 		<sonar.projectKey>devOps_pipeline_test</sonar.projectKey>
 		<sonar.host.url>http://sonar02:9990</sonar.host.url>
 		<sonar.exclusions>**/*.xml, **/*.css, **/*.gif, **/*.jpg, **/*.ttf,
-			**/*.zip, **/*.jar,**/*.class, **/*.js</sonar.exclusions>
+			**/*.zip, **/*.jar,**/*.class, **/*.js, **/*.ts</sonar.exclusions>
 
 		<!-- JACOCO/SONAR SECTION -->
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
