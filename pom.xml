@@ -23,7 +23,8 @@
 		<!-- JACOCO/SONAR SECTION -->
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-		<sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco.exec</sonar.coverage.jacoco.xmlReportPaths>
+<!-- 		<sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco.exec</sonar.coverage.jacoco.xmlReportPaths> -->
+		<sonar.jacoco.reportPaths>${project.build.directory}/jacoco.exec</sonar.jacoco.reportPaths>
 		<sonar.language>java</sonar.language>
 		<sonar.junit.reportsPaths>${project.build.directory}jacoco.exec</sonar.junit.reportsPaths>
 	</properties>
@@ -79,29 +80,9 @@
 
 						<configuration>
 							<!-- Sets the output directory for the code coverage report. -->
-							<outputDirectory>${project.build.directory}/jacoco</outputDirectory>
+							<outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
 						</configuration>
 					</execution>
-<!-- 					<execution> -->
-<!-- 						<id>check</id> -->
-<!-- 						<goals> -->
-<!-- 							<goal>check</goal> -->
-<!-- 						</goals> -->
-<!-- 						<configuration> -->
-<!-- 							<rules> -->
-<!-- 								<rule> -->
-<!-- 									<element>PACKAGE</element> -->
-<!-- 									<limits> -->
-<!-- 										<limit> -->
-<!-- 											<counter>LINE</counter> -->
-<!-- 											<value>COVEREDRATIO</value> -->
-<!-- 											<minimum>0.6</minimum> -->
-<!-- 										</limit> -->
-<!-- 									</limits> -->
-<!-- 								</rule> -->
-<!-- 							</rules> -->
-<!-- 						</configuration> -->
-<!-- 					</execution> -->
 				</executions>
 			</plugin>
 
