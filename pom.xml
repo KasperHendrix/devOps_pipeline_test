@@ -8,9 +8,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>devOps</name>
-	<url>http://maven.apache.org</url>
-
 	<properties>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,18 +16,18 @@
 
 		<!-- SONARQUBE SECTION -->
 		<sonar.login>58a193c08d6ee582ab6d8f3ef5cad7f6695fe9da</sonar.login>
-		<sonar.password></sonar.password> 
+		<sonar.password></sonar.password>
 		<sonar.projectKey>devOps_pipeline_test</sonar.projectKey>
 		<sonar.host.url>http://sonar02:9990</sonar.host.url>
-		
+
 		<!-- JACOCO/SONAR SECTION -->
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-		<sonar.jacoco.reportPaths>${project.build.directory}/surfire-reports/jacoco.exec</sonar.jacoco.reportPaths>
+		<sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco.exec</sonar.coverage.jacoco.xmlReportPaths>
 		<sonar.language>java</sonar.language>
-		<sonar.junit.reportPaths>${project.build.directory}/surfire-reports/jacoco.exec</sonar.junit.reportPaths>
+		<sonar.junit.reportsPaths>${project.build.directory}jacoco.exec</sonar.junit.reportsPaths>
 	</properties>
-	
+
 	<profiles>
 		<profile>
 			<id>test</id>
@@ -42,25 +39,31 @@
 				<sonar.host.url>http://sonar02:9990</sonar.host.url>
 				<!-- USATI PER LA FASE DI DEPLOY SU APPLICATION SERVER -->
 				<appsrv.username>pasquale.labate</appsrv.username>
-				<appsrv.psw>Chiave2019!3!</appsrv.psw>
+				<appsrv.psw>Chiave2019!3</appsrv.psw>
 				<appsrv.host>http://cisrv02:8080</appsrv.host>
 			</properties>
 		</profile>
 	</profiles>
-	
+
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.sonarsource.scanner.maven</groupId>
-					<artifactId>sonar-maven-plugin</artifactId>
-					<version>3.3.0.1492</version>
-				</plugin>
-				
-				<plugin>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<delimiters>
+						<delimiter>$</delimiter>
+					</delimiters>
+					<useDefaultDelimiters>true</useDefaultDelimiters>
+				</configuration>
+			</plugin>
+
+			<!-- JaCoCo plugin -->
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.2</version>
+				<version>0.8.4</version>
 				<executions>
 					<execution>
 						<goals>
@@ -76,15 +79,39 @@
 
 						<configuration>
 							<!-- Sets the output directory for the code coverage report. -->
-							<outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
+							<outputDirectory>${project.build.directory}/jacoco</outputDirectory>
 						</configuration>
-
 					</execution>
+<!-- 					<execution> -->
+<!-- 						<id>check</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>check</goal> -->
+<!-- 						</goals> -->
+<!-- 						<configuration> -->
+<!-- 							<rules> -->
+<!-- 								<rule> -->
+<!-- 									<element>PACKAGE</element> -->
+<!-- 									<limits> -->
+<!-- 										<limit> -->
+<!-- 											<counter>LINE</counter> -->
+<!-- 											<value>COVEREDRATIO</value> -->
+<!-- 											<minimum>0.6</minimum> -->
+<!-- 										</limit> -->
+<!-- 									</limits> -->
+<!-- 								</rule> -->
+<!-- 							</rules> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
 				</executions>
 			</plugin>
-				
-			</plugins>
-		</pluginManagement>
+
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.6.0.1398</version>
+			</plugin>
+
+		</plugins>
 	</build>
 
 	<dependencies>
