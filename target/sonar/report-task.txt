@@ -2,5 +2,5 @@ projectKey=devOps_pipeline_test
 serverUrl=http://sonar02:9990
 serverVersion=7.7.0.23042
 dashboardUrl=http://sonar02:9990/dashboard?id=devOps_pipeline_test
-ceTaskId=AWuti79WuG7_l6IFyxlJ
-ceTaskUrl=http://sonar02:9990/api/ce/task?id=AWuti79WuG7_l6IFyxlJ
+ceTaskId=AWut0CHouG7_l6IFyxlM
+ceTaskUrl=http://sonar02:9990/api/ce/task?id=AWut0CHouG7_l6IFyxlM
